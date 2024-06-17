@@ -180,3 +180,19 @@ optionButtons.forEach((button, index) => {
 
 displayQuestion();
 updateChart();
+
+// Pilotos modal
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+}
+
+// Fecha o modal se o usuário clicar fora do conteúdo
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+        event.target.style.display = "none";
+    }
+}
