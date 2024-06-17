@@ -76,8 +76,8 @@ function autoSlide() {
     showSlide(slideIndex);
 }
 
-setInterval(autoSlide, 3000); // Altere o intervalo conforme necessário
-
+setInterval(autoSlide, 3000); 
+//Quiz - script
 document.addEventListener('DOMContentLoaded', function () {
     const questions = [
         "Quem foi o primeiro piloto da Mahindra Racing a vencer uma corrida na Fórmula E?",
