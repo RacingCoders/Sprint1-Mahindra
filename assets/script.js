@@ -61,3 +61,12 @@ function showSlide(index) {
 
 // Inicializa a exibição do primeiro slide
 showSlide(slideIndex);
+
+function changeSlide(n) {
+    slideIndex = (slideIndex + n + totalSlides) % totalSlides;
+    showSlide(slideIndex);
+}
+
+// Eventos dos botões de navegação
+document.querySelector('.prev').addEventListener('click', () => changeSlide(-1));
+document.querySelector('.next').addEventListener('click', () => changeSlide(1));
