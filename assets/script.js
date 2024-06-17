@@ -50,3 +50,14 @@ toggler.addEventListener('change', function () {
         document.body.classList.remove('dark');
     }
 });
+let slideIndex = 0;
+const slides = document.querySelectorAll('.carrossel > div');
+const totalSlides = slides.length;
+
+function showSlide(index) {
+    const carrossel = document.querySelector('.carrossel');
+    carrossel.style.transform = `translateX(${-index * 100}%)`;
+}
+
+// Inicializa a exibição do primeiro slide
+showSlide(slideIndex);
