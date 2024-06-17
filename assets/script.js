@@ -158,3 +158,25 @@ function updateChart() {
     progressChart.data.datasets[0].data[2] = currentQuestion;
     progressChart.update();
 }
+optionButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        if (index === correctAnswers[currentQuestion]) {
+            correct++;
+        } else {
+            incorrect++;
+        }
+
+        currentQuestion++;
+
+        if (currentQuestion < questions.length) {
+            displayQuestion();
+        } else {
+            alert(`Quiz concluído! Acertos: ${correct}, Erros: ${incorrect}`);
+        }
+
+        updateChart();
+    });
+});
+
+displayQuestion();
+updateChart();
