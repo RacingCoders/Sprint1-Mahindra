@@ -15,3 +15,18 @@ const Menu = document.querySelector('.menu');
 menuBar.addEventListener('click', () => {
     Menu.classList.toggle('close');
 });
+const searchBtn = document.querySelector('.conteudo nav form .form-input button');
+const searchBtnIcon = document.querySelector('.conteudo nav form .form-input button .bx');
+const searchForm = document.querySelector('.conteudo nav form');
+
+searchBtn.addEventListener('click', function (e) {
+    if (window.innerWidth < 576) {
+        e.preventDefault();
+        searchForm.classList.toggle('show');
+        if (searchForm.classList.contains('show')) {
+            searchBtnIcon.classList.replace('bx-search', 'bx-x');
+        } else {
+            searchBtnIcon.classList.replace('bx-x', 'bx-search');
+        }
+    }
+});
