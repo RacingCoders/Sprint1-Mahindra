@@ -70,3 +70,10 @@ function changeSlide(n) {
 // Eventos dos botões de navegação
 document.querySelector('.prev').addEventListener('click', () => changeSlide(-1));
 document.querySelector('.next').addEventListener('click', () => changeSlide(1));
+
+function autoSlide() {
+    slideIndex = (slideIndex + 1) % totalSlides;
+    showSlide(slideIndex);
+}
+
+setInterval(autoSlide, 3000); // Altere o intervalo conforme necessário
