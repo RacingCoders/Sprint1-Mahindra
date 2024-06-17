@@ -128,3 +128,33 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+const ctx = document.getElementById('progressChart').getContext('2d');
+const progressChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Acertos', 'Erros', 'Progresso'],
+        datasets: [{
+            label: 'Seu progresso!',
+            data: [0, 0, 0],
+            backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(255, 206, 86, 0.2)'],
+            borderColor: ['rgba(75, 192, 192, 1)', 'rgba(255, 99, 132, 1)', 'rgba(255, 206, 86, 1)'],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+                max: questions.length
+            }
+        }
+    }
+});
+
+function updateChart() {
+    progressChart.data.datasets[0].data[0] = correct;
+    progressChart.data.datasets[0].data[1] = incorrect;
+    progressChart.data.datasets[0].data[2] = currentQuestion;
+    progressChart.update();
+}
