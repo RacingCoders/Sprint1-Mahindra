@@ -9,3 +9,9 @@ sideLinks.forEach(item => {
         li.classList.add('active');
     })
 });
+const menuBar = document.querySelector('.conteudo nav .bx.bx-menu');
+const Menu = document.querySelector('.menu');
+
+menuBar.addEventListener('click', () => {
+    Menu.classList.toggle('close');
+});
